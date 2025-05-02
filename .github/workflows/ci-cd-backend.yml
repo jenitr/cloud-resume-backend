@@ -31,6 +31,7 @@ jobs:
       run: |
         pytest tests/test_lambda_function.py
 
+
     - name: Package SAM Application
       run: |
         sam build --use-container
