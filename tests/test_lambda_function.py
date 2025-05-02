@@ -132,7 +132,7 @@ import json
 import boto3
 import os
 from moto import mock_dynamodb
-from hello_world import app  # Import your app with lambda_handler
+from hello_world import app  # Import  app with lambda_handler
 
 # Test for GET request (retrieve current visitor count)
 @mock_dynamodb

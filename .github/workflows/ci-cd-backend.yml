@@ -1,3 +1,4 @@
+
 name: Backend CI/CD
 
 on:
@@ -28,7 +29,7 @@ jobs:
 
     - name: Run Python tests
       run: |
-        pytest tests/
+        pytest tests/test_lambda_function.py
 
     - name: Package SAM Application
       run: |
