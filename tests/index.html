@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script>
+            // This fetch will retrieve the visitor count
+            fetch('https://hayzhxbwn0.execute-api.us-east-1.amazonaws.com/count')
+                .then(response => response.json())
+                .then((data) => {
+                    document.getElementById('replaceme').innerText = data.count;
+                });
+
+            // This fetch will increment the visitor count every time someone visits the page
+            fetch('https://hayzhxbwn0.execute-api.us-east-1.amazonaws.com/count', {
+                method: 'POST', // POST to increment the count
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})  // Send an empty body (no data to send)
+            })
+            .then(response => response.json())
+            .then((data) => {
+                console.log('Visitor count updated:', data.count);
+            })
+            .catch(error => console.error('Error incrementing visitor count:', error));
+        </script>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+        <style>
+            p {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Visitors:
+            <span id="replaceme"></span>
+        </p>
+    </body>
+</html>
